@@ -512,6 +512,8 @@ def rnnt_loss(
         boundary=boundary,
         rnnt_type=rnnt_type,
     )
+    px = px.to(torch.float32)
+    py = py.to(torch.float32)
 
     if delay_penalty > 0.0:
         B, S, T0 = px.shape

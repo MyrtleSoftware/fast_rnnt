@@ -16,7 +16,7 @@ set(languages CXX)
 set(_FT_WITH_CUDA ON)
 
 # the following settings are modified from cub/CMakeLists.txt
-set(CMAKE_CXX_STANDARD 14 CACHE STRING "The C++ version to be used.")
+set(CMAKE_CXX_STANDARD 17 CACHE STRING "The C++ version to be used.")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -100,7 +100,7 @@ if(FT_WITH_CUDA)
 
   # see https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/
   # https://www.myzhar.com/blog/tutorials/tutorial-nvidia-gpu-cuda-compute-capability/
-  set(FT_COMPUTE_ARCH_CANDIDATES 35 50 60 61 70 75)
+  set(FT_COMPUTE_ARCH_CANDIDATES 50 60 61 70 75)
   if(CUDA_VERSION VERSION_GREATER "11.0")
     list(APPEND FT_COMPUTE_ARCH_CANDIDATES 80 86)
   endif()
