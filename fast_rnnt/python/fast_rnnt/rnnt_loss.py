@@ -516,6 +516,7 @@ def rnnt_loss(
     # underlying CUDA code can only handle FP32. This speeds
     # up throughput by 25% as opposed to casting logits to 
     # FP32.
+    del logits
     px = px.to(torch.float32)
     py = py.to(torch.float32)
 
